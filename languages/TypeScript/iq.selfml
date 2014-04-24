@@ -1,0 +1,3 @@
+(detector
+    (extension ts)
+    (extension str))

@@ -1,0 +1,32 @@
+(root source.ts
+    (zone meta.function.ts
+        (match
+            (regex [\b(module)\s*(\s*[a-zA-Z0-9_?.$][\w?.$]*)\s*]
+                (1 keyword.operator.ts)
+                (2 variable.parameter.function.ts))))
+    (zone storage.type.variable.ts
+        (match
+            (list string bool number)
+            (boundary.both)))
+    (zone []
+        (match
+            (regex [\b(this)\.]
+                (1 storage.type.variable.ts))))
+    (zone keyword.operator.ts
+        (match
+            (list constructor declare interface as AS)
+            (boundary.both)))
+    (zone keyword.other.ts
+        (match
+            (regex [(super)\s*\(([a-zA-Z0-9,_?.$\s]+\s*)\)]
+                (1 storage.type.variable.ts))))
+    (zone meta.function.ts
+        (match
+            (regex [([a-zA-Z_?.$][\w?.$]*)\(\) \{]
+                (1 entity.name.function.ts))))
+    (zone meta.function.ts
+        (match
+            (regex [([a-zA-Z0-9_?.$][\w?.$]*)\s*:\s*([a-zA-Z0-9_?.$][\w?.$]*)]
+                (1 variable.parameter.function.ts)
+                (2 variable.parameter.function.ts))))
+    (include source.js))
