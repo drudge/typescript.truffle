@@ -5,7 +5,7 @@ This truffle adds syntax support for [TypeScript](http://typescriptlang.org) fil
 ## Installation
 
     mkdir -p ~/Library/Application\ Support/Chocolat/Truffles/
-    git clone https://github.com/drudge/typescript.truffle.git ~/Library/Application\ Support/Chocolat/Truffles/TypeScript.truffle
+    git clone https://github.com/drudge/typescript.truffle.git ~/Library/Application\ Support/Chocolat/Truffles/typescript.truffle
 
 ## Contributors
 
